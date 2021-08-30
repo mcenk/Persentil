@@ -1,0 +1,243 @@
+
+  <div class="container">
+    <div class="title">Persentil Hesaplama</div>
+    <div class="content">
+      <form >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Doğum Tarihi</span>
+            <input type="date" id="dogumtarihi" placeholder="14.04.2021" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Boyu</span>
+            <input type="number" name="boy" id="boy" placeholder="72 cm" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Kilosu</span>
+            <input type="number" id="kilo" placeholder="11 kg" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Baş Çevresi(Zorunlu değil)</span>
+            <input type="text" id="x"  placeholder="25 cm" >
+          </div>
+    
+        </div>
+        <div class="gender-details">
+          <input type="radio" value="Erkek" name="gender" id="erkekRadio">
+          <input type="radio" value="Kız" name="gender" id="kizRadio">
+
+          <span class="gender-title">Cinsiyet</span>
+          <div class="category">
+            <label for="erkekRadio">
+            <span class="dot one"></span>
+            <span class="gender">Erkek</span>
+          </label>
+          <label for="kizRadio">
+            <span class="dot two"></span>
+            <span class="gender">Kız</span>
+          </label>
+          </div>
+        </div>
+
+        <div class="button">
+          <button type="submit" value="Gonder" onclick="hesaplaPers()" id="hesaplaBtn">Gonder</button>
+     
+        </div>
+      </form>
+    </div>
+
+    <div class="resultDiv" id="resultDiv" style="display: none;">
+      <div class="ResultArea">
+        
+        <div class="PersentilChartResult">
+            <span class="ResultTitle">Boy:</span> <span class="ResultTitleLabelValue" id="resultBoy"></span><br>
+            <span class="ResultTitle">Kilo:</span> <span class="ResultTitleLabelValue" id="resultKilo"></span><br>
+            <span class="ResultTitle">Cinsiyet:</span> <span class="ResultTitleLabelValue" id="resultCinsiyet"></span><br>
+            <span class="ResultTitle">Cinsiyet:</span> <span class="ResultTitleLabelValue" id="resultDogumTarihi"></span>
+
+            <p class="ResultTitlePragraph">Bu yaştaki <span id="ResultCinsiyetPragraph"></span>  çocuklar için ortalama boy: <span id="ResultBoyPragraph "></span></p>
+            {{!-- <p class="ResultTitlePragraph">Çocuğun boy persentil değeri: <span id="chartResultBoyPersentil">%25 - %50 arası</span></p> --}}
+            <p class="ResultTitlePragraph" id="ResultMessage"></p>
+        </div>
+ 
+<canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+</div>
+{{!-- <canvas id="myChart" width="426" height="426" class="chartjs-render-monitor" style="display: block; height: 213px; width: 213px; "></canvas> --}}
+</div>
+
+<script src="path/to/chartjs/dist/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript" >
+let btn= document.querySelector("#hesaplaBtn");
+
+btn.addEventListener("click", function(e){
+  fPrevent(e);
+   var x = document.getElementById("resultDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+});
+
+btn.addEventListener("click",hesaplaPers)
+btn.addEventListener("click",getChart)
+
+function fPrevent(e){
+e.preventDefault()
+{{!-- btn.innerHTML= "Gorev Tamam" --}}
+}
+
+function getChart(){
+
+
+ {{!-- alert("calisitor") --}}
+var ctx = document.getElementById('myChart');
+const chartBoy = new Chart(ctx, {
+          type: 'line',
+          fill: false,
+          data: {
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              datasets: [{
+                  data: [{x:"Doğum",y:47.1},{x:"3 Ay",y:54},{x:"6 Ay",y:58},{x:"9 Ay",y:61.5},{x:"12 Ay",y:64.5},{x:"15 Ay",y:68},{x:"18 Ay",y:71},{x:"2 Yaş",y:76.5},{x:"2,5 Yaş",y:81.5},{x:"3 Yaş",y:85.5},{x:"3,5 Yaş",y:89},{x:"4 Yaş",y:92},{x:"4,5 Yaş",y:94.7},{x:"5 Yaş",y:97.5},{x:"5,5 Yaş",y:100.5},{x:"6 Yaş",y:103}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%3',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                  data: [{"x":"Doğum",y:47.8},{"x":"3 Ay",y:55.5},{"x":"6 Ay",y:60},{x:"9 Ay",y:64.5},{"x":"12 Ay",y:68},{"x":"15 Ay",y:71.5},{x:"18 Ay",y:75},{x:"2 Yaş",y:80},{x:"2,5 Yaş",y:85},{x:"3 Yaş",y:88.5},{x:"3,5 Yaş",y:92.5},{x:"4 Yaş",y:95.5},{x:"4,5 Yaş",y:98},{x:"5 Yaş",y:101.5},{x:"5,5 Yaş",y:104},{x:"6 Yaş",y:107}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%10',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:49},{x:"3 Ay",y:57.5},{x:"6 Ay",y:62},{x:"9 Ay",y:66.5},{x:"12 Ay",y:70},{x:"15 Ay",y:73.5},{x:"18 Ay",y:76.5},{x:"2 Yaş",y:83.5},{x:"2,5 Yaş",y:88},{x:"3 Yaş",y:92},{x:"3,5 Yaş",y:95.5},{x:"4 Yaş",y:98.5},{x:"4,5 Yaş",y:101.5},{x:"5 Yaş",y:104},{x:"5,5 Yaş",y:107},{x:"6 Yaş",y:110}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%25',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:50.2},{x:"3 Ay",y:58.5},{x:"6 Ay",y:64.5},{x:"9 Ay",y:69.5},{x:"12 Ay",y:73},{x:"15 Ay",y:76.5},{x:"18 Ay",y:79.5},{x:"2 Yaş",y:85.5},{x:"2,5 Yaş",y:90.5},{x:"3 Yaş",y:95},{x:"3,5 Yaş",y:98.5},{x:"4 Yaş",y:102},{x:"4,5 Yaş",y:105},{x:"5 Yaş",y:108},{x:"5,5 Yaş",y:110},{x:"6 Yaş",y:114}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,        
+                  fill: false,
+                  label: '%50',
+                  borderWidth: 3
+              },
+              {
+                  data: [{x:"Doğum",y:51},{x:"3 Ay",y:60},{x:"6 Ay",y:66.5},{x:"9 Ay",y:71},{x:"12 Ay",y:75},{x:"15 Ay",y:78.5},{x:"18 Ay",y:82},{x:"2 Yaş",y:88.5},{x:"2,5 Yaş",y:94},{x:"3 Yaş",y:98.5},{x:"3,5 Yaş",y:101.5},{x:"4 Yaş",y:105},{x:"4,5 Yaş",y:108.8},{x:"5 Yaş",y:111},{x:"5,5 Yaş",y:114},{x:"6 Yaş",y:117.5}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%75',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:51.9},{x:"3 Ay",y:62.5},{x:"6 Ay",y:68.5},{x:"9 Ay",y:73},{x:"12 Ay",y:77},{x:"15 Ay",y:81},{x:"18 Ay",y:84.5},{x:"2 Yaş",y:91},{x:"2,5 Yaş",y:96.5},{x:"3 Yaş",y:101},{x:"3,5 Yaş",y:105},{x:"4 Yaş",y:108},{x:"4,5 Yaş",y:111.5},{x:"5 Yaş",y:114.5},{x:"5,5 Yaş",y:117.5},{x:"6 Yaş",y:121}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%90',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:53.6},{x:"3 Ay",y:64.5},{x:"6 Ay",y:70.5},{x:"9 Ay",y:75.5},{x:"12 Ay",y:80},{x:"15 Ay",y:84.5},{x:"18 Ay",y:88.5},{x:"2 Yaş",y:95},{x:"2,5 Yaş",y:100},{x:"3 Yaş",y:104.5},{x:"3,5 Yaş",y:108.5},{x:"4 Yaş",y:112},{x:"4,5 Yaş",y:115},{x:"5 Yaş",y:118.5},{x:"5,5 Yaş",y:121.5},{x:"6 Yaş",y:125}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%97',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                data: [{x: "3,5 Yaş", y: 85}],
+                label: 'sonuc',
+                pointBackgroundColor: "#50c9ff",
+                pointBorderWidth: 10,
+                pointBorderColor: "#50c9ff"
+              }]
+          },
+          options: {
+              legend: {
+                display: false,
+                position: 'right',
+                align: 'center',
+                reverse: true,
+                labels: {
+                  boxWidth: 0
+                }
+              },
+              scales: {
+                yAxes: [{
+                  ticks: { max: 140}
+                }]
+              },
+              layout: {
+              padding: {
+                left: 0,
+                right: 60,
+                top: 20,
+                bottom: 0
+              }
+            }
+          }
+      });
+
+  
+ 
+}
+
+function hesaplaPers(){
+  var x = document.getElementById("resultDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+   let cinsiyet;
+
+  let boy= document.getElementById("boy").value
+  let kilo= document.getElementById("kilo").value
+  let yas= document.getElementById("dogumtarihi").value
+  let yil= new Date(yas);
+  let deneme=yil.getUTCMonth();
+
+
+
+  
+  if (document.getElementById('erkekRadio').checked) {
+  cinsiyet = document.getElementById('erkekRadio').value;
+  } else {
+    cinsiyet = document.getElementById('kizRadio').value;
+  }
+
+  document.getElementById("resultBoy").innerText= boy
+  document.getElementById("resultKilo").innerText= kilo
+  document.getElementById("resultCinsiyet").innerText= cinsiyet
+  document.getElementById("ResultCinsiyetPragraph").innerText= cinsiyet
+  document.getElementById("resultDogumTarihi").innerText=yas
+ }
+
+</script>
+   
