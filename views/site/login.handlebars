@@ -499,19 +499,9 @@
               ChartAge.value = "6 Yaş";
           }
 
-          let ChartLink;
+    
 
-          if(Age.months < 2 && Age.years < 1){
-            ChartLink = Age.months + " aylık bebek gelişimi ile ilgili daha <span>detaylı bilgi almak için <a target='_blank' href='/" + Age.months + "-aylik-bebegin-gelisimi'>sayfamızı</a></span> ziyaret edebilirsiniz";
-          }else if(Age.months < 13 && Age.years < 1){
-            ChartLink = Age.months + " aylık bebek gelişimi ile ilgili daha <span>detaylı bilgi almak için <a target='_blank' href='/" + Age.months + "-aylik-bebek-gelisimi'>sayfamızı</a></span> ziyaret edebilirsiniz";
-          }else if(Age.years < 2){
-            ChartLink = "12-24 aylık bebek gelişimi ile ilgili daha <span>detaylı bilgi almak için <a target='_blank' href='/12-24-aylik-bebek-gelisimi'>sayfamızı</a></span> ziyaret edebilirsiniz";
-          }else if(Age.years < 3){
-            ChartLink = "24-36 aylık bebek gelişimi ile ilgili daha <span>detaylı bilgi almak için <a target='_blank' href='/24-36-aylik-bebek-gelisimi'>sayfamızı</a></span> ziyaret edebilirsiniz";
-          }else{
-            ChartLink = "24-36 aylık bebek gelişimi ile ilgili daha <span>detaylı bilgi almak için <a target='_blank' href='/24-36-aylik-bebek-gelisimi'>sayfamızı</a></span> ziyaret edebilirsiniz";
-          }
+    
 
           let chartResultYas;
           let chartResultAgeBoy = ChartBoy[3][ChartAge.key];

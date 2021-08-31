@@ -50,27 +50,38 @@
       <div class="ResultArea">
         
         <div class="PersentilChartResult">
-            <span class="ResultTitle">Boy:</span> <span class="ResultTitleLabelValue" id="resultBoy"></span><br>
-            <span class="ResultTitle">Kilo:</span> <span class="ResultTitleLabelValue" id="resultKilo"></span><br>
+            <span class="ResultTitle">Boy:</span> <span class="ResultTitleLabelValue" id="resultBoy"></span> <span class="ResultTitle"> cm</span><br>
+            <span class="ResultTitle">Kilo:</span> <span class="ResultTitleLabelValue" id="resultKilo"></span><span class="ResultTitle"> kg</span><br>
             <span class="ResultTitle">Cinsiyet:</span> <span class="ResultTitleLabelValue" id="resultCinsiyet"></span><br>
-            <span class="ResultTitle">Cinsiyet:</span> <span class="ResultTitleLabelValue" id="resultDogumTarihi"></span>
+            <span class="ResultTitle">Yaşı :</span> <span class="ResultTitleLabelValue" id="resultDogumTarihi"></span>
+                
+            <p class="ResultTitlePragraph"> Bu yaştaki <span id="resultCinsiyetPragraph"></span> çocukların ortalama boyu : <span id="resultBoyOrtalama"></span> cm</p>
+            <p class="ResultTitlePragraph"> Bu yaştaki <span id="resultCinsiyetPragraph"></span> çocukların ortalama kilosu : <span id="resultKiloOrtalama"></span> kg</p>
 
-            <p class="ResultTitlePragraph">Bu yaştaki <span id="ResultCinsiyetPragraph"></span>  çocuklar için ortalama boy: <span id="ResultBoyPragraph "></span></p>
-            {{!-- <p class="ResultTitlePragraph">Çocuğun boy persentil değeri: <span id="chartResultBoyPersentil">%25 - %50 arası</span></p> --}}
+
             <p class="ResultTitlePragraph" id="ResultMessage"></p>
         </div>
  
-<canvas id="myChart" width="400" height="400"></canvas>
-    </div>
+      
+    </div><br><br>
+    <center><h2 id="boyGrafikLabel" >Boy Grafiği</h2></center>
+    <div class="boyChartDiv"><canvas id="myChartBoy" width="400" height="400"></canvas></div>
+     <center><h2 id="boyGrafikLabel" >Kilo Grafiği</h2></center>
+    <div class="coyKiloDiv"><canvas id="myChartKilo" width="400" height="400"></canvas></div>
 </div>
 {{!-- <canvas id="myChart" width="426" height="426" class="chartjs-render-monitor" style="display: block; height: 213px; width: 213px; "></canvas> --}}
 </div>
 
+
+
+{{!-- /////////// SCRIPT ALANI BASLAR/////??//// --}}
+
+
 <script src="path/to/chartjs/dist/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <script type="text/javascript" >
 let btn= document.querySelector("#hesaplaBtn");
+
 
 btn.addEventListener("click", function(e){
   fPrevent(e);
@@ -80,22 +91,21 @@ btn.addEventListener("click", function(e){
   } else {
     x.style.display = "none";
   }
-
 });
-
-btn.addEventListener("click",hesaplaPers)
-btn.addEventListener("click",getChart)
-
 function fPrevent(e){
 e.preventDefault()
 {{!-- btn.innerHTML= "Gorev Tamam" --}}
 }
 
-function getChart(){
+btn.addEventListener("click",hesaplaPers)
 
 
- {{!-- alert("calisitor") --}}
-var ctx = document.getElementById('myChart');
+
+////////////////////////////////////GET CHART/////////////////////////////// 
+
+function getChartBoyErkek(x,y){
+
+var ctx = document.getElementById('myChartBoy');
 const chartBoy = new Chart(ctx, {
           type: 'line',
           fill: false,
@@ -171,7 +181,7 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                data: [{x: "3,5 Yaş", y: 85}],
+                data: [{x: x, y: y}],
                 label: 'sonuc',
                 pointBackgroundColor: "#50c9ff",
                 pointBorderWidth: 10,
@@ -204,39 +214,547 @@ const chartBoy = new Chart(ctx, {
           }
       });
 
-  
- 
+}
+
+function getChartBoyKiz(x,y){
+
+var ctx = document.getElementById('myChartBoy');
+const chartBoy = new Chart(ctx, {
+          type: 'line',
+          fill: false,
+          data: {
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              datasets: [{
+                  data: [{x:"Doğum",y:47.1},{x:"3 Ay",y:54},{x:"6 Ay",y:58},{x:"9 Ay",y:61.5},{x:"12 Ay",y:64.5},{x:"15 Ay",y:68},{x:"18 Ay",y:71},{x:"2 Yaş",y:76.5},{x:"2,5 Yaş",y:81.5},{x:"3 Yaş",y:85.5},{x:"3,5 Yaş",y:89},{x:"4 Yaş",y:92},{x:"4,5 Yaş",y:94.7},{x:"5 Yaş",y:97.5},{x:"5,5 Yaş",y:100.5},{x:"6 Yaş",y:103}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%3',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                  data: [{"x":"Doğum",y:47.8},{"x":"3 Ay",y:55.5},{"x":"6 Ay",y:60},{x:"9 Ay",y:64.5},{"x":"12 Ay",y:68},{"x":"15 Ay",y:71.5},{x:"18 Ay",y:75},{x:"2 Yaş",y:80},{x:"2,5 Yaş",y:85},{x:"3 Yaş",y:88.5},{x:"3,5 Yaş",y:92.5},{x:"4 Yaş",y:95.5},{x:"4,5 Yaş",y:98},{x:"5 Yaş",y:101.5},{x:"5,5 Yaş",y:104},{x:"6 Yaş",y:107}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%10',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:49},{x:"3 Ay",y:57.5},{x:"6 Ay",y:62},{x:"9 Ay",y:66.5},{x:"12 Ay",y:70},{x:"15 Ay",y:73.5},{x:"18 Ay",y:76.5},{x:"2 Yaş",y:83.5},{x:"2,5 Yaş",y:88},{x:"3 Yaş",y:92},{x:"3,5 Yaş",y:95.5},{x:"4 Yaş",y:98.5},{x:"4,5 Yaş",y:101.5},{x:"5 Yaş",y:104},{x:"5,5 Yaş",y:107},{x:"6 Yaş",y:110}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%25',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:50.2},{x:"3 Ay",y:58.5},{x:"6 Ay",y:64.5},{x:"9 Ay",y:69.5},{x:"12 Ay",y:73},{x:"15 Ay",y:76.5},{x:"18 Ay",y:79.5},{x:"2 Yaş",y:85.5},{x:"2,5 Yaş",y:90.5},{x:"3 Yaş",y:95},{x:"3,5 Yaş",y:98.5},{x:"4 Yaş",y:102},{x:"4,5 Yaş",y:105},{x:"5 Yaş",y:108},{x:"5,5 Yaş",y:110},{x:"6 Yaş",y:114}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,        
+                  fill: false,
+                  label: '%50',
+                  borderWidth: 3
+              },
+              {
+                  data: [{x:"Doğum",y:51},{x:"3 Ay",y:60},{x:"6 Ay",y:66.5},{x:"9 Ay",y:71},{x:"12 Ay",y:75},{x:"15 Ay",y:78.5},{x:"18 Ay",y:82},{x:"2 Yaş",y:88.5},{x:"2,5 Yaş",y:94},{x:"3 Yaş",y:98.5},{x:"3,5 Yaş",y:101.5},{x:"4 Yaş",y:105},{x:"4,5 Yaş",y:108.8},{x:"5 Yaş",y:111},{x:"5,5 Yaş",y:114},{x:"6 Yaş",y:117.5}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%75',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:51.9},{x:"3 Ay",y:62.5},{x:"6 Ay",y:68.5},{x:"9 Ay",y:73},{x:"12 Ay",y:77},{x:"15 Ay",y:81},{x:"18 Ay",y:84.5},{x:"2 Yaş",y:91},{x:"2,5 Yaş",y:96.5},{x:"3 Yaş",y:101},{x:"3,5 Yaş",y:105},{x:"4 Yaş",y:108},{x:"4,5 Yaş",y:111.5},{x:"5 Yaş",y:114.5},{x:"5,5 Yaş",y:117.5},{x:"6 Yaş",y:121}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%90',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:53.6},{x:"3 Ay",y:64.5},{x:"6 Ay",y:70.5},{x:"9 Ay",y:75.5},{x:"12 Ay",y:80},{x:"15 Ay",y:84.5},{x:"18 Ay",y:88.5},{x:"2 Yaş",y:95},{x:"2,5 Yaş",y:100},{x:"3 Yaş",y:104.5},{x:"3,5 Yaş",y:108.5},{x:"4 Yaş",y:112},{x:"4,5 Yaş",y:115},{x:"5 Yaş",y:118.5},{x:"5,5 Yaş",y:121.5},{x:"6 Yaş",y:125}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%97',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                data: [{x: x, y: y}],
+                label: 'sonuc',
+                pointBackgroundColor: "#50c9ff",
+                pointBorderWidth: 10,
+                pointBorderColor: "#50c9ff"
+              }]
+          },
+          options: {
+              legend: {
+                display: false,
+                position: 'right',
+                align: 'center',
+                reverse: true,
+                labels: {
+                  boxWidth: 0
+                }
+              },
+              scales: {
+                yAxes: [{
+                  ticks: { max: 140}
+                }]
+              },
+              layout: {
+              padding: {
+                left: 0,
+                right: 60,
+                top: 20,
+                bottom: 0
+              }
+            }
+          }
+      });
+
+}
+
+function getChartKiloErkek(x,y){
+
+      var CtxKilo = document.getElementById('myChartKilo');
+      const chartKilo = new Chart(CtxKilo, {
+          type: 'line',
+          fill: false,
+          data: {
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              datasets: [{
+                  data: [{x:"Doğum",y:2.6},{x:"3 Ay",y:4},{x:"6 Ay",y:5.4},{x:"9 Ay",y:6.4},{x:"12 Ay",y:7.1},{x:"15 Ay",y:7.7},{x:"18 Ay",y:8.3},{x:"2 Yaş",y:9.2},{x:"2,5 Yaş",y:9.9},{x:"3 Yaş",y:10.6},{x:"3,5 Yaş",y:11.2},{x:"4 Yaş",y:11.6},{x:"4,5 Yaş",y:12},{x:"5 Yaş",y:12.6},{x:"5,5 Yaş",y:13.2},{x:"6 Yaş",y:13.7}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%3',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:2.8},{x:"3 Ay",y:4.4},{x:"6 Ay",y:6.1},{x:"9 Ay",y:7.3},{x:"12 Ay",y:8.1},{x:"15 Ay",y:8.7},{x:"18 Ay",y:9.3},{x:"2 Yaş",y:10.4},{x:"2,5 Yaş",y:11.3},{x:"3 Yaş",y:12},{x:"3,5 Yaş",y:12.6},{x:"4 Yaş",y:13.2},{x:"4,5 Yaş",y:13.9},{x:"5 Yaş",y:14.6},{x:"5,5 Yaş",y:15.2},{x:"6 Yaş",y:16}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%10',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.1},{x:"3 Ay",y:4.8},{x:"6 Ay",y:6.8},{x:"9 Ay",y:8},{x:"12 Ay",y:8.9},{x:"15 Ay",y:9.6},{x:"18 Ay",y:10.2},{x:"2 Yaş",y:11.3},{x:"2,5 Yaş",y:12.2},{x:"3 Yaş",y:13},{x:"3,5 Yaş",y:13.7},{x:"4 Yaş",y:14.4},{x:"4,5 Yaş",y:15.3},{x:"5 Yaş",y:16.3},{x:"5,5 Yaş",y:17.1},{x:"6 Yaş",y:18.1}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%25',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.4},{x:"3 Ay",y:5.4},{x:"6 Ay",y:7.4},{x:"9 Ay",y:8.6},{x:"12 Ay",y:9.6},{x:"15 Ay",y:10.4},{x:"18 Ay",y:11},{x:"2 Yaş",y:12.2},{x:"2,5 Yaş",y:13.1},{x:"3 Yaş",y:14},{x:"3,5 Yaş",y:15},{x:"4 Yaş",y:16},{x:"4,5 Yaş",y:17.1},{x:"5 Yaş",y:18.2},{x:"5,5 Yaş",y:19.2},{x:"6 Yaş",y:20.2}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%50',
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.7},{x:"3 Ay",y:6},{x:"6 Ay",y:8},{x:"9 Ay",y:9.5},{x:"12 Ay",y:10.6},{x:"15 Ay",y:11.4},{x:"18 Ay",y:12},{x:"2 Yaş",y:13.1},{x:"2,5 Yaş",y:14.1},{x:"3 Yaş",y:15},{x:"3,5 Yaş",y:16.3},{x:"4 Yaş",y:17.5},{x:"4,5 Yaş",y:18.8},{x:"5 Yaş",y:20},{x:"5,5 Yaş",y:21.1},{x:"6 Yaş",y:22.5}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%75',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.9},{x:"3 Ay",y:6.4},{x:"6 Ay",y:8.6},{x:"9 Ay",y:10},{x:"12 Ay",y:11},{x:"15 Ay",y:11.9},{x:"18 Ay",y:12.6},{x:"2 Yaş",y:13.8},{x:"2,5 Yaş",y:15},{x:"3 Yaş",y:16.1},{x:"3,5 Yaş",y:17.4},{x:"4 Yaş",y:18.9},{x:"4,5 Yaş",y:20.4},{x:"5 Yaş",y:21.7},{x:"5,5 Yaş",y:23.2},{x:"6 Yaş",y:24.6}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%90',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:4.3},{x:"3 Ay",y:7},{x:"6 Ay",y:9.2},{x:"9 Ay",y:10.8},{x:"12 Ay",y:12.1},{x:"15 Ay",y:13},{x:"18 Ay",y:13.7},{x:"2 Yaş",y:15.1},{x:"2,5 Yaş",y:16.3},{x:"3 Yaş",y:17.5},{x:"3,5 Yaş",y:19},{x:"4 Yaş",y:20.6},{x:"4,5 Yaş",y:22},{x:"5 Yaş",y:23.8},{x:"5,5 Yaş",y:25.2},{x:"6 Yaş",y:26.6}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%97',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                data: [{x: x, y: y}],
+                label: '',
+                pointBackgroundColor: "#50c9ff",
+                pointBorderWidth: 10,
+                pointBorderColor: "#50c9ff"
+              }]
+          },
+          options: {
+              legend: {
+                display: false,
+                position: 'right',
+                align: 'center',
+                reverse: true,
+                labels: {
+                  boxWidth: 0
+                }
+              },
+              scales: {
+                yAxes: [{
+                  ticks: { max: 25 }
+                }]
+              },
+              layout: {
+              padding: {
+                left: 0,
+                right: 60,
+                top: 20,
+                bottom: 0
+              }
+            }
+          }
+      });
+
+
+
+}
+
+function getChartKiloKiz(x,y){
+
+      var CtxKilo = document.getElementById('myChartKilo');
+      const chartKilo = new Chart(CtxKilo, {
+          type: 'line',
+          fill: false,
+          data: {
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              datasets: [{
+                  data: [{x:"Doğum",y:2.6},{x:"3 Ay",y:4},{x:"6 Ay",y:5.4},{x:"9 Ay",y:6.4},{x:"12 Ay",y:7.1},{x:"15 Ay",y:7.7},{x:"18 Ay",y:8.3},{x:"2 Yaş",y:9.2},{x:"2,5 Yaş",y:9.9},{x:"3 Yaş",y:10.6},{x:"3,5 Yaş",y:11.2},{x:"4 Yaş",y:11.6},{x:"4,5 Yaş",y:12},{x:"5 Yaş",y:12.6},{x:"5,5 Yaş",y:13.2},{x:"6 Yaş",y:13.7}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%3',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:2.8},{x:"3 Ay",y:4.4},{x:"6 Ay",y:6.1},{x:"9 Ay",y:7.3},{x:"12 Ay",y:8.1},{x:"15 Ay",y:8.7},{x:"18 Ay",y:9.3},{x:"2 Yaş",y:10.4},{x:"2,5 Yaş",y:11.3},{x:"3 Yaş",y:12},{x:"3,5 Yaş",y:12.6},{x:"4 Yaş",y:13.2},{x:"4,5 Yaş",y:13.9},{x:"5 Yaş",y:14.6},{x:"5,5 Yaş",y:15.2},{x:"6 Yaş",y:16}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%10',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.1},{x:"3 Ay",y:4.8},{x:"6 Ay",y:6.8},{x:"9 Ay",y:8},{x:"12 Ay",y:8.9},{x:"15 Ay",y:9.6},{x:"18 Ay",y:10.2},{x:"2 Yaş",y:11.3},{x:"2,5 Yaş",y:12.2},{x:"3 Yaş",y:13},{x:"3,5 Yaş",y:13.7},{x:"4 Yaş",y:14.4},{x:"4,5 Yaş",y:15.3},{x:"5 Yaş",y:16.3},{x:"5,5 Yaş",y:17.1},{x:"6 Yaş",y:18.1}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%25',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.4},{x:"3 Ay",y:5.4},{x:"6 Ay",y:7.4},{x:"9 Ay",y:8.6},{x:"12 Ay",y:9.6},{x:"15 Ay",y:10.4},{x:"18 Ay",y:11},{x:"2 Yaş",y:12.2},{x:"2,5 Yaş",y:13.1},{x:"3 Yaş",y:14},{x:"3,5 Yaş",y:15},{x:"4 Yaş",y:16},{x:"4,5 Yaş",y:17.1},{x:"5 Yaş",y:18.2},{x:"5,5 Yaş",y:19.2},{x:"6 Yaş",y:20.2}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%50',
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.7},{x:"3 Ay",y:6},{x:"6 Ay",y:8},{x:"9 Ay",y:9.5},{x:"12 Ay",y:10.6},{x:"15 Ay",y:11.4},{x:"18 Ay",y:12},{x:"2 Yaş",y:13.1},{x:"2,5 Yaş",y:14.1},{x:"3 Yaş",y:15},{x:"3,5 Yaş",y:16.3},{x:"4 Yaş",y:17.5},{x:"4,5 Yaş",y:18.8},{x:"5 Yaş",y:20},{x:"5,5 Yaş",y:21.1},{x:"6 Yaş",y:22.5}],
+                  borderColor: 'green',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%75',
+                  borderDash: [8],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:3.9},{x:"3 Ay",y:6.4},{x:"6 Ay",y:8.6},{x:"9 Ay",y:10},{x:"12 Ay",y:11},{x:"15 Ay",y:11.9},{x:"18 Ay",y:12.6},{x:"2 Yaş",y:13.8},{x:"2,5 Yaş",y:15},{x:"3 Yaş",y:16.1},{x:"3,5 Yaş",y:17.4},{x:"4 Yaş",y:18.9},{x:"4,5 Yaş",y:20.4},{x:"5 Yaş",y:21.7},{x:"5,5 Yaş",y:23.2},{x:"6 Yaş",y:24.6}],
+                  borderColor: 'orange',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%90',
+                  borderDash: [3],
+                  borderWidth: 1
+              },
+              {
+                  data: [{x:"Doğum",y:4.3},{x:"3 Ay",y:7},{x:"6 Ay",y:9.2},{x:"9 Ay",y:10.8},{x:"12 Ay",y:12.1},{x:"15 Ay",y:13},{x:"18 Ay",y:13.7},{x:"2 Yaş",y:15.1},{x:"2,5 Yaş",y:16.3},{x:"3 Yaş",y:17.5},{x:"3,5 Yaş",y:19},{x:"4 Yaş",y:20.6},{x:"4,5 Yaş",y:22},{x:"5 Yaş",y:23.8},{x:"5,5 Yaş",y:25.2},{x:"6 Yaş",y:26.6}],
+                  borderColor: 'red',
+                  radius: 0,
+                  borderWith: 1,
+                  fill: false,
+                  label: '%97',
+                  borderDash: [14],
+                  borderWidth: 1
+              },
+              {
+                data: [{x: x, y: y}],
+                label: '',
+                pointBackgroundColor: "#50c9ff",
+                pointBorderWidth: 10,
+                pointBorderColor: "#50c9ff"
+              }]
+          },
+          options: {
+              legend: {
+                display: false,
+                position: 'right',
+                align: 'center',
+                reverse: true,
+                labels: {
+                  boxWidth: 0
+                }
+              },
+              scales: {
+                yAxes: [{
+                  ticks: { max: 25 }
+                }]
+              },
+              layout: {
+              padding: {
+                left: 0,
+                right: 60,
+                top: 20,
+                bottom: 0
+              }
+            }
+          }
+      });
+
 }
 
 function hesaplaPers(){
-  var x = document.getElementById("resultDiv");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+
+   {{!-- verileri alma alani  --}}
+
    let cinsiyet;
 
-  let boy= document.getElementById("boy").value
-  let kilo= document.getElementById("kilo").value
-  let yas= document.getElementById("dogumtarihi").value
-  let yil= new Date(yas);
-  let deneme=yil.getUTCMonth();
+  let boyAlinan= document.getElementById("boy").value
+  let kiloAlinan= document.getElementById("kilo").value
+  let yasAlinan= document.getElementById("dogumtarihi").value
 
 
-
-  
   if (document.getElementById('erkekRadio').checked) {
   cinsiyet = document.getElementById('erkekRadio').value;
   } else {
     cinsiyet = document.getElementById('kizRadio').value;
   }
+  // Tarih hesaplama alani //
 
-  document.getElementById("resultBoy").innerText= boy
-  document.getElementById("resultKilo").innerText= kilo
+  
+  let simdi = new Date();
+
+  let simdikiYil = simdi.getYear();
+  let simdikiAy = simdi.getMonth();
+  let simdikiGun = simdi.getDate();
+
+  let dogum = new Date(yasAlinan);
+
+  let dogumYil = dogum.getYear();
+  let dogumAy = dogum.getMonth();
+  let dogumGun = dogum.getDate();
+
+  let yasSonuc = {};
+
+    yasYili = simdikiYil - dogumYil;
+
+  if(simdikiAy >= dogumAy){
+
+    var yasAyi = simdikiAy - dogumAy;
+
+  }else{
+
+    var yasAyi = 12 + simdikiAy -dogumAy;
+    yasYili--;
+
+  }
+
+  if (simdikiGun >= dogumGun){
+    var yasGunu = simdikiGun - dogumGun;
+  }else {
+
+    var yasGunu = 31 + simdikiGun - dogumGun;
+     yasAyi--;
+
+    if (yasAyi < 0) {
+      yasAyi = 11;
+      yasYili--;
+    }
+  }
+
+  yasSonuc = {
+    yil: yasYili,
+    ay: yasAyi,
+    gun: yasGunu
+  };
+
+
+  let yasSonucGGAAYYY;
+
+  if(yasSonuc.yil === 0){
+    yasSonucGGAAYYY = yasSonuc.ay + ' Ay ' + yasSonuc.gun + ' Gün';
+  }else{
+    yasSonucGGAAYYY = yasSonuc.yil+ ' Yıl ' + yasSonuc.ay + ' Ay ' + yasSonuc.gun + ' Gün';
+  }
+
+
+// DATA ALANI// 
+      const dataBoyErkek = [[47.1,54,58,61.5,64.5,68,71,76.5,81.5,85.5,89,92,94.7,97.5,100.5,103,105.5,108,125.5,147.5,148.5],
+      [47.8,55.5,60,64.5,68,71.5,75,80,85,88.5,92.5,95.5,98,101.5,104,107,110,113,130,151,152.5],
+      [49,57.5,62,66.5,70,73.5,76.5,83.5,88,92,95.5,98.5,101.5,104,107,110,113,116,133.5,154,155],
+      [50.2,58.5,64.5,69.5,73,76.5,79.5,85.5,90.5,95,98.5,102,105,108,111,114,117,120,137,158.5,160],
+      [51,60,66.5,71,75,78.5,82,88.5,94,98.5,101.5,105,108.8,111,114,117.5,120.5,123.5,141,162,165],
+      [51.9,62.5,68.5,73,77,81,84.5,91,96.5,101,105,108,111.5,114.5,117.5,121,124,127,144.5,166,169.5],
+      [53.6,64.5,70.5,75.5,80,84.5,88.5,95,100,104.5,108.5,112,115,118.5,121.5,125,128,131,149,170.4,174]];
+
+      const dataBoyKiz = [[47.1,54,58,61.5,64.5,68,71,76.5,81.5,85.5,89,92,94.7,97.5,100.5,103,105.5,108,125.5,147.5,148.5],
+      [47.8,55.5,60,64.5,68,71.5,75,80,85,88.5,92.5,95.5,98,101.5,104,107,110,113,130,151,152.5],
+      [49,57.5,62,66.5,70,73.5,76.5,83.5,88,92,95.5,98.5,101.5,104,107,110,113,116,133.5,154,155],
+      [48.2,58.5,64.5,69.5,73,76.5,79.5,85.5,90.5,95,98.5,102,105,108,111,114,117,120,137,158.5,160],
+      [51,60,66.5,71,75,78.5,82,88.5,94,98.5,101.5,105,108.8,111,114,117.5,120.5,123.5,141,162,165],
+      [51.9,62.5,68.5,73,77,81,84.5,91,96.5,101,105,108,111.5,114.5,117.5,121,124,127,144.5,166,169.5],
+      [53.6,64.5,70.5,75.5,80,84.5,88.5,95,100,104.5,108.5,112,115,118.5,121.5,125,128,131,149,170.4,174]];
+
+      const dataKiloErkek = [[2.6,4,5.4,6.4,7.1,7.7,8.3,9.2,9.9,10.6,11.2,11.6,12,12.6,13.2,13.7,14.4,15.3,23,38,43],
+      [2.8,4.4,6.1,7.3,8.1,8.7,9.3,10.4,11.3,12,12.6,13.2,13.9,14.6,15.2,16,16.6,17.5,26.6,42.9,47.6],
+      [3.1,4.8,6.8,8,8.9,9.6,10.2,11.3,12.2,13,13.7,14.4,15.3,16.3,17.1,18.1,19.1,20.1,30.2,47.4,52.5],
+      [3.4,5.4,7.4,8.6,9.6,10.4,11,12.2,13.1,14,15,16,17.1,18.2,19.2,20.2,21.3,22.5,34,51.8,56],
+      [3.7,6,8,9.5,10.6,11.4,12,13.1,14.1,15,16.3,17.5,18.8,20,21.1,22.5,23.7,25.2,38.2,56.3,60.9],
+      [3.9,6.4,8.6,10,11,11.9,12.6,13.8,15,16.1,17.4,18.9,20.4,21.7,23.2,24.6,26.1,27.6,41.5,60.7,65],
+      [4.3,7,9.2,10.8,12.1,13,13.7,15.1,16.3,17.5,19,20.6,22,23.8,25.2,26.6,28.3,30,45,66.3,71]];
+
+      const dataKiloKiz = [[2.6,4,5.4,6.4,7.1,7.7,8.3,9.2,9.9,10.6,11.2,11.6,12,12.6,13.2,13.7,14.4,15.3,23,38,43],
+      [2.8,4.4,6.1,7.3,8.1,8.7,9.3,10.4,11.3,12,12.6,13.2,13.9,14.6,15.2,16,16.6,17.5,26.6,42.9,47.6],
+      [3.1,4.8,6.8,8,8.9,9.6,10.2,11.3,12.2,13,13.7,14.4,15.3,16.3,17.1,18.1,19.1,20.1,30.2,47.4,52.5],
+      [3.4,5.4,7.4,8.6,9.6,10.4,11,12.2,13.1,14,15,16,17.1,18.2,19.2,20.2,21.3,22.5,34,51.8,56],
+      [3.7,6,8,9.5,10.6,11.4,12,13.1,14.1,15,16.3,17.5,18.8,20,21.1,22.5,23.7,25.2,38.2,56.3,60.9],
+      [3.9,6.4,8.6,10,11,11.9,12.6,13.8,15,16.1,17.4,18.9,20.4,21.7,23.2,24.6,26.1,27.6,41.5,60.7,65],
+      [4.3,7,9.2,10.8,12.1,13,13.7,15.1,16.3,17.5,19,20.6,22,23.8,25.2,26.6,28.3,30,45,66.3,71]];
+      
+     
+          let chartResultYas = {
+            key: 0,
+            value: 0
+          };
+
+
+          if(yasSonuc.ay < 2 && yasSonuc.yil < 1){
+              chartResultYas.key = 0;
+              chartResultYas.value = "Doğum";
+          }else if(yasSonuc.ay < 5 && yasSonuc.yil < 1){
+              chartResultYas.key = 1;
+              chartResultYas.value = "3 Ay";
+          }else if(yasSonuc.ay < 8 && yasSonuc.yil < 1){
+              chartResultYas.key = 2;
+              chartResultYas.value = "6 Ay";
+          }else if(yasSonuc.ay < 11 && yasSonuc.yil < 1){
+              chartResultYas.key = 3;
+              chartResultYas.value = "9 Ay";
+          }else if(yasSonuc.ay < 12 && yasSonuc.yil < 1 || yasSonuc.ay < 2 && yasSonuc.yil < 2){
+              chartResultYas.key = 4;
+              chartResultYas.value = "12 Ay";
+          }else if(yasSonuc.ay < 5 && yasSonuc.yil < 2){
+              chartResultYas.key = 5;
+              chartResultYas.value = "15 Ay";
+          }else if(yasSonuc.ay < 9 && yasSonuc.yil < 2){
+              chartResultYas.key = 6;
+              chartResultYas.value = "18 Ay";
+          }else if(yasSonuc.ay < 12 && yasSonuc.yil < 2 || yasSonuc.ay < 4 && yasSonuc.yil < 3){
+              chartResultYas.key = 7;
+              chartResultYas.value = "2 Yaş";
+          }else if(yasSonuc.ay < 10 && yasSonuc.yil < 3){
+              chartResultYas.key = 8;
+              chartResultYas.value = "2,5 Yaş";
+          }else if(yasSonuc.ay < 12 && yasSonuc.yil < 3 || yasSonuc.ay < 4 && yasSonuc.yil < 4){
+              chartResultYas.key = 9;
+              chartResultYas.value = "3 Yaş";
+          }else if(yasSonuc.ay < 10 && yasSonuc.yil < 4){
+              chartResultYas.key = 10;
+              chartResultYas.value = "3,5 Yaş";
+          }else if(yasSonuc.ay < 12 && yasSonuc.yil < 4 || yasSonuc.ay < 4 && yasSonuc.yil < 5){
+              chartResultYas.key = 11;
+              chartResultYas.value = "4 Yaş";
+          }else if(yasSonuc.ay < 10 && yasSonuc.yil < 5){
+              chartResultYas.key = 12;
+              chartResultYas.value = "4,5 Yaş";
+          }else if(yasSonuc.ay < 12 && yasSonuc.yil < 5 || yasSonuc.ay < 4 && yasSonuc.yil < 6){
+              chartResultYas.key = 13;
+              chartResultYas.value = "5 Yaş";
+          }else if(yasSonuc.ay < 10 && yasSonuc.yil < 6){
+              chartResultYas.key = 14;
+              chartResultYas.value = "5,5 Yaş";
+          }else if(yasSonuc.ay < 13 && yasSonuc.yil < 7){
+              chartResultYas.key = 15;
+              chartResultYas.value = "6 Yaş";
+          }
+
+    
+       
+          
+  var sonucOrtalamaBoy; 
+  var sonucOrtalamaKilo;
+
+
+  let period= chartResultYas.value;
+  let degerBoy= boyAlinan;
+  let degerKilo= kiloAlinan;
+
+  if (cinsiyet=="Erkek"){
+    sonucOrtalamaBoy= dataBoyErkek[3][chartResultYas.key];
+    sonucOrtalamaKilo= dataKiloErkek[3][chartResultYas.key];
+    getChartBoyErkek(period,degerBoy);
+    getChartKiloErkek(period,degerKilo)
+  } else{
+    sonucOrtalamaBoy= dataBoyKiz[3][chartResultYas.key];
+    sonucOrtalamaKilo= dataKiloKiz[3][chartResultYas.key];
+    getChartBoyKiz(period,degerBoy);
+    getChartKiloKiz(period,degerKilo);
+  }
+  // verileri ilgili yerlere yazdirma bolumu buradan baslar 
+
+  document.getElementById("resultBoy").innerText= boyAlinan
+  document.getElementById("resultKilo").innerText= kiloAlinan
   document.getElementById("resultCinsiyet").innerText= cinsiyet
-  document.getElementById("ResultCinsiyetPragraph").innerText= cinsiyet
-  document.getElementById("resultDogumTarihi").innerText=yas
+  document.getElementById("resultCinsiyetPragraph").innerText= cinsiyet
+  document.getElementById("resultDogumTarihi").innerText=yasSonucGGAAYYY
+  document.getElementById("resultBoyOrtalama").innerHTML=sonucOrtalamaBoy
+  document.getElementById("resultKiloOrtalama").innerHTML=sonucOrtalamaKilo
+
+  alert(sonucOrtalamaBoy)
  }
 
 </script>
