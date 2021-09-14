@@ -9,6 +9,12 @@ router.get ('/', (req,res)=>{
 
 })
 
+router.get ('/register', (req,res)=>{
+
+    res.render('site/register')
+
+})
+
 router.get('/login', (req,res)=>{
 
     res.render('site/login')
