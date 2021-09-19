@@ -50,6 +50,7 @@
       <div class="ResultArea">
         
         <div class="PersentilChartResult">
+            <b>Hesaplama Sonuçları</b> <br>
             <span class="ResultTitle">Boy:</span> <span class="ResultTitleLabelValue" id="resultBoy"></span> <span class="ResultTitle"> cm</span><br>
             <span class="ResultTitle">Kilo:</span> <span class="ResultTitleLabelValue" id="resultKilo"></span><span class="ResultTitle"> kg</span><br>
             <span class="ResultTitle">Cinsiyet:</span> <span class="ResultTitleLabelValue" id="resultCinsiyet"></span><br>
@@ -127,9 +128,26 @@ const chartBoy = new Chart(ctx, {
           type: 'line',
           fill: false,
           data: {
-              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş"],
               datasets: [{
-                  data: [{x:"Doğum",y:47.1},{x:"3 Ay",y:54},{x:"6 Ay",y:58},{x:"9 Ay",y:61.5},{x:"12 Ay",y:64.5},{x:"15 Ay",y:68},{x:"18 Ay",y:71},{x:"2 Yaş",y:76.5},{x:"2,5 Yaş",y:81.5},{x:"3 Yaş",y:85.5},{x:"3,5 Yaş",y:89},{x:"4 Yaş",y:92},{x:"4,5 Yaş",y:94.7},{x:"5 Yaş",y:97.5},{x:"5,5 Yaş",y:100.5},{x:"6 Yaş",y:103}],
+
+          
+                  data: [
+                  {x:"Doğum",y:46.3},
+                  {x:"3 Ay",y:57.6},
+                  {x:"6 Ay",y:63.6},
+                  {x:"9 Ay",y:67.7},
+                  {x:"12 Ay",y:71.3},
+                  {x:"15 Ay",y:74.4},
+                  {x:"18 Ay",y:77.2},
+                  {x:"2 Yaş",y:81.4},
+                  {x:"2,5 Yaş",y:85.5},
+                  {x:"3 Yaş",y:89.1},
+                  {x:"3,5 Yaş",y:92.4},
+                  {x:"4 Yaş",y:95.4},
+                  {x:"4,5 Yaş",y:98.4},
+                  {x:"5 Yaş",y:101.2}],
+                  
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -139,17 +157,48 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                  data: [{"x":"Doğum",y:47.8},{"x":"3 Ay",y:55.5},{"x":"6 Ay",y:60},{x:"9 Ay",y:64.5},{"x":"12 Ay",y:68},{"x":"15 Ay",y:71.5},{x:"18 Ay",y:75},{x:"2 Yaş",y:80},{x:"2,5 Yaş",y:85},{x:"3 Yaş",y:88.5},{x:"3,5 Yaş",y:92.5},{x:"4 Yaş",y:95.5},{x:"4,5 Yaş",y:98},{x:"5 Yaş",y:101.5},{x:"5,5 Yaş",y:104},{x:"6 Yaş",y:107}],
+                  data: [
+                  {x:"Doğum",y:47.9},
+                  {x:"3 Ay",y:59.3},
+                  {x:"6 Ay",y:65.4},
+                  {x:"9 Ay",y:69.6},
+                  {x:"12 Ay",y:73.3},
+                  {x:"15 Ay",y:76.5},
+                  {x:"18 Ay",y:79.5},
+                  {x:"2 Yaş",y:83.9},
+                  {x:"2,5 Yaş",y:88.4},
+                  {x:"3 Yaş",y:92.2},
+                  {x:"3,5 Yaş",y:95.7},
+                  {x:"4 Yaş",y:99.0},
+                  {x:"4,5 Yaş",y:102.1},
+                  {x:"5 Yaş",y:105.2}],
+
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%10',
+                  label: '%15',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:49},{x:"3 Ay",y:57.5},{x:"6 Ay",y:62},{x:"9 Ay",y:66.5},{x:"12 Ay",y:70},{x:"15 Ay",y:73.5},{x:"18 Ay",y:76.5},{x:"2 Yaş",y:83.5},{x:"2,5 Yaş",y:88},{x:"3 Yaş",y:92},{x:"3,5 Yaş",y:95.5},{x:"4 Yaş",y:98.5},{x:"4,5 Yaş",y:101.5},{x:"5 Yaş",y:104},{x:"5,5 Yaş",y:107},{x:"6 Yaş",y:110}],
+                  data: [
+                  {x:"Doğum",y:48.6},
+                  {x:"3 Ay",y:60.1},
+                  {x:"6 Ay",y:66.2},
+                  {x:"9 Ay",y:70.5},
+                  {x:"12 Ay",y:74.1},
+                  {x:"15 Ay",y:77.4},
+                  {x:"18 Ay",y:80.4},
+                  {x:"2 Yaş",y:85.1},
+                  {x:"2,5 Yaş",y:89.6},
+                  {x:"3 Yaş",y:93.6},
+                  {x:"3,5 Yaş",y:97.2},
+                  {x:"4 Yaş",y:100.5},
+                  {x:"4,5 Yaş",y:103.7},
+                  {x:"5 Yaş",y:106.8}],
+                  
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -159,7 +208,23 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:50.2},{x:"3 Ay",y:58.5},{x:"6 Ay",y:64.5},{x:"9 Ay",y:69.5},{x:"12 Ay",y:73},{x:"15 Ay",y:76.5},{x:"18 Ay",y:79.5},{x:"2 Yaş",y:85.5},{x:"2,5 Yaş",y:90.5},{x:"3 Yaş",y:95},{x:"3,5 Yaş",y:98.5},{x:"4 Yaş",y:102},{x:"4,5 Yaş",y:105},{x:"5 Yaş",y:108},{x:"5,5 Yaş",y:110},{x:"6 Yaş",y:114}],
+                  data: [
+                  {x:"Doğum",y:49.9},
+                  {x:"3 Ay",y:61.4},
+                  {x:"6 Ay",y:67.6},
+                  {x:"9 Ay",y:72.0},
+                  {x:"12 Ay",y:75.7},
+                  {x:"15 Ay",y:79.1},
+                  {x:"18 Ay",y:82.3},
+                  {x:"2 Yaş",y:87.1},
+                  {x:"2,5 Yaş",y:91.9},
+                  {x:"3 Yaş",y:96.1},
+                  {x:"3,5 Yaş",y:99.9},
+                  {x:"4 Yaş",y:103.3},
+                  {x:"4,5 Yaş",y:106.7},
+                  {x:"5 Yaş",y:110.0}],                  
+                  
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,        
@@ -168,7 +233,24 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 3
               },
               {
-                  data: [{x:"Doğum",y:51},{x:"3 Ay",y:60},{x:"6 Ay",y:66.5},{x:"9 Ay",y:71},{x:"12 Ay",y:75},{x:"15 Ay",y:78.5},{x:"18 Ay",y:82},{x:"2 Yaş",y:88.5},{x:"2,5 Yaş",y:94},{x:"3 Yaş",y:98.5},{x:"3,5 Yaş",y:101.5},{x:"4 Yaş",y:105},{x:"4,5 Yaş",y:108.8},{x:"5 Yaş",y:111},{x:"5,5 Yaş",y:114},{x:"6 Yaş",y:117.5}],
+                  data: [
+                  {x:"Doğum",y:51.2},
+                  {x:"3 Ay",y:62.8},
+                  {x:"6 Ay",y:69.1},
+                  {x:"9 Ay",y:73.5},
+                  {x:"12 Ay",y:77.4},
+                  {x:"15 Ay",y:80.9},
+                  {x:"18 Ay",y:84.1},
+                  {x:"2 Yaş",y:89.2},
+                  {x:"2,5 Yaş",y:94.2},
+                  {x:"3 Yaş",y:98.6},
+                  {x:"3,5 Yaş",y:102.5},
+                  {x:"4 Yaş",y:106.2},
+                  {x:"4,5 Yaş",y:109.6},
+                  {x:"5 Yaş",y:113.1}],                 
+                 
+                 
+                 
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -178,17 +260,45 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:51.9},{x:"3 Ay",y:62.5},{x:"6 Ay",y:68.5},{x:"9 Ay",y:73},{x:"12 Ay",y:77},{x:"15 Ay",y:81},{x:"18 Ay",y:84.5},{x:"2 Yaş",y:91},{x:"2,5 Yaş",y:96.5},{x:"3 Yaş",y:101},{x:"3,5 Yaş",y:105},{x:"4 Yaş",y:108},{x:"4,5 Yaş",y:111.5},{x:"5 Yaş",y:114.5},{x:"5,5 Yaş",y:117.5},{x:"6 Yaş",y:121}],
+                data: [
+                  {x:"Doğum",y:51.8},
+                  {x:"3 Ay",y:63.5},
+                  {x:"6 Ay",y:69.8},
+                  {x:"9 Ay",y:74.3},
+                  {x:"12 Ay",y:78.2},
+                  {x:"15 Ay",y:81.8},
+                  {x:"18 Ay",y:85.1},
+                  {x:"2 Yaş",y:90.3},
+                  {x:"2,5 Yaş",y:95.5},
+                  {x:"3 Yaş",y:99.9},
+                  {x:"3,5 Yaş",y:104.0},
+                  {x:"4 Yaş",y:107.7},
+                  {x:"4,5 Yaş",y:111.2},
+                  {x:"5 Yaş",y:114.8}],                    
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%90',
+                  label: '%85',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:53.6},{x:"3 Ay",y:64.5},{x:"6 Ay",y:70.5},{x:"9 Ay",y:75.5},{x:"12 Ay",y:80},{x:"15 Ay",y:84.5},{x:"18 Ay",y:88.5},{x:"2 Yaş",y:95},{x:"2,5 Yaş",y:100},{x:"3 Yaş",y:104.5},{x:"3,5 Yaş",y:108.5},{x:"4 Yaş",y:112},{x:"4,5 Yaş",y:115},{x:"5 Yaş",y:118.5},{x:"5,5 Yaş",y:121.5},{x:"6 Yaş",y:125}],
+                 data: [
+                  {x:"Doğum",y:53.4},
+                  {x:"3 Ay",y:65.3},
+                  {x:"6 Ay",y:71.6},
+                  {x:"9 Ay",y:76.2},
+                  {x:"12 Ay",y:80.2},
+                  {x:"15 Ay",y:83.9},
+                  {x:"18 Ay",y:87.3},
+                  {x:"2 Yaş",y:92.9},
+                  {x:"2,5 Yaş",y:98.3},
+                  {x:"3 Yaş",y:103.1},
+                  {x:"3,5 Yaş",y:107.3},
+                  {x:"4 Yaş",y:111.2},
+                  {x:"4,5 Yaş",y:115.0},
+                  {x:"5 Yaş",y:118.7}],                  
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -199,7 +309,7 @@ const chartBoy = new Chart(ctx, {
               },
               {
                 data: [{x: x, y: y}],
-                label: 'sonuc',
+                label: '',
                 pointBackgroundColor: "#c93a7b",
                 pointBorderWidth: 10,
                 pointBorderColor: "#c93a7b"
@@ -240,9 +350,27 @@ const chartBoy = new Chart(ctx, {
           type: 'line',
           fill: false,
           data: {
-              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş"],
               datasets: [{
-                  data: [{x:"Doğum",y:47.1},{x:"3 Ay",y:54},{x:"6 Ay",y:58},{x:"9 Ay",y:61.5},{x:"12 Ay",y:64.5},{x:"15 Ay",y:68},{x:"18 Ay",y:71},{x:"2 Yaş",y:76.5},{x:"2,5 Yaş",y:81.5},{x:"3 Yaş",y:85.5},{x:"3,5 Yaş",y:89},{x:"4 Yaş",y:92},{x:"4,5 Yaş",y:94.7},{x:"5 Yaş",y:97.5},{x:"5,5 Yaş",y:100.5},{x:"6 Yaş",y:103}],
+                 
+                  data: [
+                  {x:"Doğum",y:45.6},
+                  {x:"3 Ay",y:55.8},
+                  {x:"6 Ay",y:61.5},
+                  {x:"9 Ay",y:65.6},
+                  {x:"12 Ay",y:69.2},
+                  {x:"15 Ay",y:72.4},
+                  {x:"18 Ay",y:75.2},
+                  {x:"2 Yaş",y:80.3},
+                  {x:"2,5 Yaş",y:84.0},
+                  {x:"3 Yaş",y:87.9},
+                  {x:"3,5 Yaş",y:91.4},
+                  {x:"4 Yaş",y:94.6},
+                  {x:"4,5 Yaş",y:97.6},
+                  {x:"5 Yaş",y:100.5}],                 
+                 
+                 
+                 
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -252,17 +380,48 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                  data: [{"x":"Doğum",y:47.8},{"x":"3 Ay",y:55.5},{"x":"6 Ay",y:60},{x:"9 Ay",y:64.5},{"x":"12 Ay",y:68},{"x":"15 Ay",y:71.5},{x:"18 Ay",y:75},{x:"2 Yaş",y:80},{x:"2,5 Yaş",y:85},{x:"3 Yaş",y:88.5},{x:"3,5 Yaş",y:92.5},{x:"4 Yaş",y:95.5},{x:"4,5 Yaş",y:98},{x:"5 Yaş",y:101.5},{x:"5,5 Yaş",y:104},{x:"6 Yaş",y:107}],
+                  data: [
+                  {x:"Doğum",y:47.2},
+                  {x:"3 Ay",y:57.6},
+                  {x:"6 Ay",y:63.4},
+                  {x:"9 Ay",y:67.6},
+                  {x:"12 Ay",y:71.3},
+                  {x:"15 Ay",y:74.7},
+                  {x:"18 Ay",y:77.7},
+                  {x:"2 Yaş",y:83.1},
+                  {x:"2,5 Yaş",y:87.0},
+                  {x:"3 Yaş",y:91.1},
+                  {x:"3,5 Yaş",y:94.8},
+                  {x:"4 Yaş",y:98.3},
+                  {x:"4,5 Yaş",y:101.5},
+                  {x:"5 Yaş",y:104.5}],                    
+                 
+                 
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%10',
+                  label: '%15',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:49},{x:"3 Ay",y:57.5},{x:"6 Ay",y:62},{x:"9 Ay",y:66.5},{x:"12 Ay",y:70},{x:"15 Ay",y:73.5},{x:"18 Ay",y:76.5},{x:"2 Yaş",y:83.5},{x:"2,5 Yaş",y:88},{x:"3 Yaş",y:92},{x:"3,5 Yaş",y:95.5},{x:"4 Yaş",y:98.5},{x:"4,5 Yaş",y:101.5},{x:"5 Yaş",y:104},{x:"5,5 Yaş",y:107},{x:"6 Yaş",y:110}],
+                  data: [
+                  {x:"Doğum",y:47.9},
+                  {x:"3 Ay",y:58.4},
+                  {x:"6 Ay",y:64.2},
+                  {x:"9 Ay",y:68.5},
+                  {x:"12 Ay",y:72.3},
+                  {x:"15 Ay",y:75.5},
+                  {x:"18 Ay",y:78.7},
+                  {x:"2 Yaş",y:84.2},
+                  {x:"2,5 Yaş",y:88.3},
+                  {x:"3 Yaş",y:92.5},
+                  {x:"3,5 Yaş",y:96.3},
+                  {x:"4 Yaş",y:99.8},
+                  {x:"4,5 Yaş",y:103.1},
+                  {x:"5 Yaş",y:106.2}],                    
+                 
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -272,7 +431,23 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:50.2},{x:"3 Ay",y:58.5},{x:"6 Ay",y:64.5},{x:"9 Ay",y:69.5},{x:"12 Ay",y:73},{x:"15 Ay",y:76.5},{x:"18 Ay",y:79.5},{x:"2 Yaş",y:85.5},{x:"2,5 Yaş",y:90.5},{x:"3 Yaş",y:95},{x:"3,5 Yaş",y:98.5},{x:"4 Yaş",y:102},{x:"4,5 Yaş",y:105},{x:"5 Yaş",y:108},{x:"5,5 Yaş",y:110},{x:"6 Yaş",y:114}],
+                  data: [
+                  {x:"Doğum",y:49.1},
+                  {x:"3 Ay",y:59.8},
+                  {x:"6 Ay",y:65.7},
+                  {x:"9 Ay",y:70.1},
+                  {x:"12 Ay",y:74.0},
+                  {x:"15 Ay",y:77.5},
+                  {x:"18 Ay",y:80.7},
+                  {x:"2 Yaş",y:86.4},
+                  {x:"2,5 Yaş",y:90.7},
+                  {x:"3 Yaş",y:95.1},
+                  {x:"3,5 Yaş",y:99.0},
+                  {x:"4 Yaş",y:102.7},
+                  {x:"4,5 Yaş",y:106.2},
+                  {x:"5 Yaş",y:109.4}],                     
+                  
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,        
@@ -281,7 +456,22 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 3
               },
               {
-                  data: [{x:"Doğum",y:51},{x:"3 Ay",y:60},{x:"6 Ay",y:66.5},{x:"9 Ay",y:71},{x:"12 Ay",y:75},{x:"15 Ay",y:78.5},{x:"18 Ay",y:82},{x:"2 Yaş",y:88.5},{x:"2,5 Yaş",y:94},{x:"3 Yaş",y:98.5},{x:"3,5 Yaş",y:101.5},{x:"4 Yaş",y:105},{x:"4,5 Yaş",y:108.8},{x:"5 Yaş",y:111},{x:"5,5 Yaş",y:114},{x:"6 Yaş",y:117.5}],
+                  data: [
+                  {x:"Doğum",y:50.4},
+                  {x:"3 Ay",y:61.2},
+                  {x:"6 Ay",y:67.3},
+                  {x:"9 Ay",y:71.8},
+                  {x:"12 Ay",y:75.8},
+                  {x:"15 Ay",y:79.4},
+                  {x:"18 Ay",y:82.7},
+                  {x:"2 Yaş",y:88.6},
+                  {x:"2,5 Yaş",y:93.1},
+                  {x:"3 Yaş",y:97.6},
+                  {x:"3,5 Yaş",y:101.8},
+                  {x:"4 Yaş",y:105.6},
+                  {x:"4,5 Yaş",y:109.2},
+                  {x:"5 Yaş",y:112.6}],                    
+                 
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -291,17 +481,47 @@ const chartBoy = new Chart(ctx, {
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:51.9},{x:"3 Ay",y:62.5},{x:"6 Ay",y:68.5},{x:"9 Ay",y:73},{x:"12 Ay",y:77},{x:"15 Ay",y:81},{x:"18 Ay",y:84.5},{x:"2 Yaş",y:91},{x:"2,5 Yaş",y:96.5},{x:"3 Yaş",y:101},{x:"3,5 Yaş",y:105},{x:"4 Yaş",y:108},{x:"4,5 Yaş",y:111.5},{x:"5 Yaş",y:114.5},{x:"5,5 Yaş",y:117.5},{x:"6 Yaş",y:121}],
+                  data: [
+                  {x:"Doğum",y:51.1},
+                  {x:"3 Ay",y:62.0},
+                  {x:"6 Ay",y:68.1},
+                  {x:"9 Ay",y:72.6},
+                  {x:"12 Ay",y:76.7},
+                  {x:"15 Ay",y:80.3},
+                  {x:"18 Ay",y:83.7},
+                  {x:"2 Yaş",y:89.8},
+                  {x:"2,5 Yaş",y:94.3},
+                  {x:"3 Yaş",y:99.0},
+                  {x:"3,5 Yaş",y:103.3},
+                  {x:"4 Yaş",y:107.2},
+                  {x:"4,5 Yaş",y:110.9},
+                  {x:"5 Yaş",y:114.4}],                    
+                 
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%90',
+                  label: '%85',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:53.6},{x:"3 Ay",y:64.5},{x:"6 Ay",y:70.5},{x:"9 Ay",y:75.5},{x:"12 Ay",y:80},{x:"15 Ay",y:84.5},{x:"18 Ay",y:88.5},{x:"2 Yaş",y:95},{x:"2,5 Yaş",y:100},{x:"3 Yaş",y:104.5},{x:"3,5 Yaş",y:108.5},{x:"4 Yaş",y:112},{x:"4,5 Yaş",y:115},{x:"5 Yaş",y:118.5},{x:"5,5 Yaş",y:121.5},{x:"6 Yaş",y:125}],
+                  data: [
+                  {x:"Doğum",y:52.7},
+                  {x:"3 Ay",y:63.8},
+                  {x:"6 Ay",y:70.0},
+                  {x:"9 Ay",y:74.7},
+                  {x:"12 Ay",y:78.9},
+                  {x:"15 Ay",y:82.7},
+                  {x:"18 Ay",y:86.2},
+                  {x:"2 Yaş",y:92.5},
+                  {x:"2,5 Yaş",y:97.3},
+                  {x:"3 Yaş",y:102.2},
+                  {x:"3,5 Yaş",y:106.7},
+                  {x:"4 Yaş",y:110.8},
+                  {x:"4,5 Yaş",y:114.7},
+                  {x:"5 Yaş",y:118.4}],                
+               
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -312,7 +532,7 @@ const chartBoy = new Chart(ctx, {
               },
               {
                 data: [{x: x, y: y}],
-                label: 'sonuc',
+                label: '',
                 pointBackgroundColor: "#c93a7b",
                 pointBorderWidth: 10,
                 pointBorderColor: "#c93a7b"
@@ -353,9 +573,25 @@ function getChartKiloErkek(x,y){
           type: 'line',
           fill: false,
           data: {
-              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş"],
               datasets: [{
-                  data: [{x:"Doğum",y:2.6},{x:"3 Ay",y:4},{x:"6 Ay",y:5.4},{x:"9 Ay",y:6.4},{x:"12 Ay",y:7.1},{x:"15 Ay",y:7.7},{x:"18 Ay",y:8.3},{x:"2 Yaş",y:9.2},{x:"2,5 Yaş",y:9.9},{x:"3 Yaş",y:10.6},{x:"3,5 Yaş",y:11.2},{x:"4 Yaş",y:11.6},{x:"4,5 Yaş",y:12},{x:"5 Yaş",y:12.6},{x:"5,5 Yaş",y:13.2},{x:"6 Yaş",y:13.7}],
+
+                  data: [
+                  {x:"Doğum",y:2.5},
+                  {x:"3 Ay",y:5.1},
+                  {x:"6 Ay",y:6.4},
+                  {x:"9 Ay",y:7.2},
+                  {x:"12 Ay",y:7.8},
+                  {x:"15 Ay",y:8.4},
+                  {x:"18 Ay",y:8.9},
+                  {x:"2 Yaş",y:9.8},
+                  {x:"2,5 Yaş",y:10.7},
+                  {x:"3 Yaş",y:11.4},
+                  {x:"3,5 Yaş",y:12.2},
+                  {x:"4 Yaş",y:12.9},
+                  {x:"4,5 Yaş",y:13.6},
+                  {x:"5 Yaş",y:14.3}],
+                
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -365,17 +601,49 @@ function getChartKiloErkek(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:2.8},{x:"3 Ay",y:4.4},{x:"6 Ay",y:6.1},{x:"9 Ay",y:7.3},{x:"12 Ay",y:8.1},{x:"15 Ay",y:8.7},{x:"18 Ay",y:9.3},{x:"2 Yaş",y:10.4},{x:"2,5 Yaş",y:11.3},{x:"3 Yaş",y:12},{x:"3,5 Yaş",y:12.6},{x:"4 Yaş",y:13.2},{x:"4,5 Yaş",y:13.9},{x:"5 Yaş",y:14.6},{x:"5,5 Yaş",y:15.2},{x:"6 Yaş",y:16}],
+                 
+                  data: [
+                  {x:"Doğum",y:2.9},
+                  {x:"3 Ay",y:5.6},
+                  {x:"6 Ay",y:7.1},
+                  {x:"9 Ay",y:7.9},
+                  {x:"12 Ay",y:8.6},
+                  {x:"15 Ay",y:9.2},
+                  {x:"18 Ay",y:9.7},
+                  {x:"2 Yaş",y:10.8},
+                  {x:"2,5 Yaş",y:11.8},
+                  {x:"3 Yaş",y:12.7},
+                  {x:"3,5 Yaş",y:13.5},
+                  {x:"4 Yaş",y:14.3},
+                  {x:"4,5 Yaş",y:15.2},
+                  {x:"5 Yaş",y:16.0}],                 
+                 
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%10',
+                  label: '%15',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.1},{x:"3 Ay",y:4.8},{x:"6 Ay",y:6.8},{x:"9 Ay",y:8},{x:"12 Ay",y:8.9},{x:"15 Ay",y:9.6},{x:"18 Ay",y:10.2},{x:"2 Yaş",y:11.3},{x:"2,5 Yaş",y:12.2},{x:"3 Yaş",y:13},{x:"3,5 Yaş",y:13.7},{x:"4 Yaş",y:14.4},{x:"4,5 Yaş",y:15.3},{x:"5 Yaş",y:16.3},{x:"5,5 Yaş",y:17.1},{x:"6 Yaş",y:18.1}],
+                  data: [
+                  {x:"Doğum",y:3.0},
+                  {x:"3 Ay",y:5.9},
+                  {x:"6 Ay",y:7.4},
+                  {x:"9 Ay",y:8.3},
+                  {x:"12 Ay",y:9.0},
+                  {x:"15 Ay",y:9.6},
+                  {x:"18 Ay",y:10.1},
+                  {x:"2 Yaş",y:11.3},
+                  {x:"2,5 Yaş",y:12.3},
+                  {x:"3 Yaş",y:13.2},
+                  {x:"3,5 Yaş",y:14.1},
+                  {x:"4 Yaş",y:15.0},
+                  {x:"4,5 Yaş",y:15.9},
+                  {x:"5 Yaş",y:16.7}],                      
+                  
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -385,7 +653,22 @@ function getChartKiloErkek(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.4},{x:"3 Ay",y:5.4},{x:"6 Ay",y:7.4},{x:"9 Ay",y:8.6},{x:"12 Ay",y:9.6},{x:"15 Ay",y:10.4},{x:"18 Ay",y:11},{x:"2 Yaş",y:12.2},{x:"2,5 Yaş",y:13.1},{x:"3 Yaş",y:14},{x:"3,5 Yaş",y:15},{x:"4 Yaş",y:16},{x:"4,5 Yaş",y:17.1},{x:"5 Yaş",y:18.2},{x:"5,5 Yaş",y:19.2},{x:"6 Yaş",y:20.2}],
+                  data: [
+                  {x:"Doğum",y:3.3},
+                  {x:"3 Ay",y:6.4},
+                  {x:"6 Ay",y:7.9},
+                  {x:"9 Ay",y:8.9},
+                  {x:"12 Ay",y:9.6},
+                  {x:"15 Ay",y:10.3},
+                  {x:"18 Ay",y:10.9},
+                  {x:"2 Yaş",y:12.2},
+                  {x:"2,5 Yaş",y:13.3},
+                  {x:"3 Yaş",y:14.3},
+                  {x:"3,5 Yaş",y:15.3},
+                  {x:"4 Yaş",y:16.3},
+                  {x:"4,5 Yaş",y:17.3},
+                  {x:"5 Yaş",y:18.3}],                                      
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -394,7 +677,23 @@ function getChartKiloErkek(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.7},{x:"3 Ay",y:6},{x:"6 Ay",y:8},{x:"9 Ay",y:9.5},{x:"12 Ay",y:10.6},{x:"15 Ay",y:11.4},{x:"18 Ay",y:12},{x:"2 Yaş",y:13.1},{x:"2,5 Yaş",y:14.1},{x:"3 Yaş",y:15},{x:"3,5 Yaş",y:16.3},{x:"4 Yaş",y:17.5},{x:"4,5 Yaş",y:18.8},{x:"5 Yaş",y:20},{x:"5,5 Yaş",y:21.1},{x:"6 Yaş",y:22.5}],
+                  data: [
+                  {x:"Doğum",y:3.7},
+                  {x:"3 Ay",y:6.9},
+                  {x:"6 Ay",y:8.5},
+                  {x:"9 Ay",y:9.6},
+                  {x:"12 Ay",y:10.4},
+                  {x:"15 Ay",y:11.1},
+                  {x:"18 Ay",y:11.8},
+                  {x:"2 Yaş",y:13.1},
+                  {x:"2,5 Yaş",y:14.4},
+                  {x:"3 Yaş",y:15.6},
+                  {x:"3,5 Yaş",y:16.7},
+                  {x:"4 Yaş",y:17.8},
+                  {x:"4,5 Yaş",y:19.0},
+                  {x:"5 Yaş",y:20.1}],                    
+               
+               
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -404,17 +703,49 @@ function getChartKiloErkek(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.9},{x:"3 Ay",y:6.4},{x:"6 Ay",y:8.6},{x:"9 Ay",y:10},{x:"12 Ay",y:11},{x:"15 Ay",y:11.9},{x:"18 Ay",y:12.6},{x:"2 Yaş",y:13.8},{x:"2,5 Yaş",y:15},{x:"3 Yaş",y:16.1},{x:"3,5 Yaş",y:17.4},{x:"4 Yaş",y:18.9},{x:"4,5 Yaş",y:20.4},{x:"5 Yaş",y:21.7},{x:"5,5 Yaş",y:23.2},{x:"6 Yaş",y:24.6}],
+                  data: [
+                  {x:"Doğum",y:3.9},
+                  {x:"3 Ay",y:7.2},
+                  {x:"6 Ay",y:8.9},
+                  {x:"9 Ay",y:10.0},
+                  {x:"12 Ay",y:10.8},
+                  {x:"15 Ay",y:11.6},
+                  {x:"18 Ay",y:12.3},
+                  {x:"2 Yaş",y:13.7},
+                  {x:"2,5 Yaş",y:15.0},
+                  {x:"3 Yaş",y:16.3},
+                  {x:"3,5 Yaş",y:17.5},
+                  {x:"4 Yaş",y:18.7},
+                  {x:"4,5 Yaş",y:19.9},
+                  {x:"5 Yaş",y:21.1}],                      
+                 
+                 
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%90',
+                  label: '%85',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:4.3},{x:"3 Ay",y:7},{x:"6 Ay",y:9.2},{x:"9 Ay",y:10.8},{x:"12 Ay",y:12.1},{x:"15 Ay",y:13},{x:"18 Ay",y:13.7},{x:"2 Yaş",y:15.1},{x:"2,5 Yaş",y:16.3},{x:"3 Yaş",y:17.5},{x:"3,5 Yaş",y:19},{x:"4 Yaş",y:20.6},{x:"4,5 Yaş",y:22},{x:"5 Yaş",y:23.8},{x:"5,5 Yaş",y:25.2},{x:"6 Yaş",y:26.6}],
+                  data: [
+                  {x:"Doğum",y:4.3},
+                  {x:"3 Ay",y:7.9},
+                  {x:"6 Ay",y:9.7},
+                  {x:"9 Ay",y:10.9},
+                  {x:"12 Ay",y:11.8},
+                  {x:"15 Ay",y:12.7},
+                  {x:"18 Ay",y:13.5},
+                  {x:"2 Yaş",y:15.1},
+                  {x:"2,5 Yaş",y:16.6},
+                  {x:"3 Yaş",y:18.0},
+                  {x:"3,5 Yaş",y:19.4},
+                  {x:"4 Yaş",y:20.9},
+                  {x:"4,5 Yaş",y:22.3},
+                  {x:"5 Yaş",y:23.8}],                        
+                  
+                  
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -468,9 +799,25 @@ function getChartKiloKiz(x,y){
           type: 'line',
           fill: false,
           data: {
-              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş", "5,5 Yaş", "6 Yaş"],
+              labels: ['Doğum', '3 Ay', '6 Ay', '9 Ay', '12 Ay', '15 Ay', '18 Ay', "2 Yaş", "2,5 Yaş", "3 Yaş", "3,5 Yaş", "4 Yaş", "4,5 Yaş", "5 Yaş"],
               datasets: [{
-                  data: [{x:"Doğum",y:2.6},{x:"3 Ay",y:4},{x:"6 Ay",y:5.4},{x:"9 Ay",y:6.4},{x:"12 Ay",y:7.1},{x:"15 Ay",y:7.7},{x:"18 Ay",y:8.3},{x:"2 Yaş",y:9.2},{x:"2,5 Yaş",y:9.9},{x:"3 Yaş",y:10.6},{x:"3,5 Yaş",y:11.2},{x:"4 Yaş",y:11.6},{x:"4,5 Yaş",y:12},{x:"5 Yaş",y:12.6},{x:"5,5 Yaş",y:13.2},{x:"6 Yaş",y:13.7}],
+                 
+                  data: [
+                  {x:"Doğum",y:2.4},
+                  {x:"3 Ay",y:4.6},
+                  {x:"6 Ay",y:5.8},
+                  {x:"9 Ay",y:6.6},
+                  {x:"12 Ay",y:7.1},
+                  {x:"15 Ay",y:7.7},
+                  {x:"18 Ay",y:8.2},
+                  {x:"2 Yaş",y:9.2},
+                  {x:"2,5 Yaş",y:10.1},
+                  {x:"3 Yaş",y:11.1},
+                  {x:"3,5 Yaş",y:11.8},
+                  {x:"4 Yaş",y:12.5},
+                  {x:"4,5 Yaş",y:13.2},
+                  {x:"5 Yaş",y:14.0}],                 
+                 
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,
@@ -480,17 +827,48 @@ function getChartKiloKiz(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:2.8},{x:"3 Ay",y:4.4},{x:"6 Ay",y:6.1},{x:"9 Ay",y:7.3},{x:"12 Ay",y:8.1},{x:"15 Ay",y:8.7},{x:"18 Ay",y:9.3},{x:"2 Yaş",y:10.4},{x:"2,5 Yaş",y:11.3},{x:"3 Yaş",y:12},{x:"3,5 Yaş",y:12.6},{x:"4 Yaş",y:13.2},{x:"4,5 Yaş",y:13.9},{x:"5 Yaş",y:14.6},{x:"5,5 Yaş",y:15.2},{x:"6 Yaş",y:16}],
+                  data: [
+                  {x:"Doğum",y:2.8},
+                  {x:"3 Ay",y:5.1},
+                  {x:"6 Ay",y:6.4},
+                  {x:"9 Ay",y:7.3},
+                  {x:"12 Ay",y:7.9},
+                  {x:"15 Ay",y:8.5},
+                  {x:"18 Ay",y:9.0},
+                  {x:"2 Yaş",y:10.1},
+                  {x:"2,5 Yaş",y:11.2},
+                  {x:"3 Yaş",y:12.1},
+                  {x:"3,5 Yaş",y:13.1},
+                  {x:"4 Yaş",y:14.0},
+                  {x:"4,5 Yaş",y:14.8},
+                  {x:"5 Yaş",y:15.7}],                  
+                 
+                 
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%10',
+                  label: '%15',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.1},{x:"3 Ay",y:4.8},{x:"6 Ay",y:6.8},{x:"9 Ay",y:8},{x:"12 Ay",y:8.9},{x:"15 Ay",y:9.6},{x:"18 Ay",y:10.2},{x:"2 Yaş",y:11.3},{x:"2,5 Yaş",y:12.2},{x:"3 Yaş",y:13},{x:"3,5 Yaş",y:13.7},{x:"4 Yaş",y:14.4},{x:"4,5 Yaş",y:15.3},{x:"5 Yaş",y:16.3},{x:"5,5 Yaş",y:17.1},{x:"6 Yaş",y:18.1}],
+                  data: [
+                  {x:"Doğum",y:2.9},
+                  {x:"3 Ay",y:5.4},
+                  {x:"6 Ay",y:6.7},
+                  {x:"9 Ay",y:7.6},
+                  {x:"12 Ay",y:8.2},
+                  {x:"15 Ay",y:8.8},
+                  {x:"18 Ay",y:9.4},
+                  {x:"2 Yaş",y:10.6},
+                  {x:"2,5 Yaş",y:11.7},
+                  {x:"3 Yaş",y:12.7},
+                  {x:"3,5 Yaş",y:13.7},
+                  {x:"4 Yaş",y:14.7},
+                  {x:"4,5 Yaş",y:15.6},
+                  {x:"5 Yaş",y:16.5}],                      
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -500,7 +878,22 @@ function getChartKiloKiz(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.4},{x:"3 Ay",y:5.4},{x:"6 Ay",y:7.4},{x:"9 Ay",y:8.6},{x:"12 Ay",y:9.6},{x:"15 Ay",y:10.4},{x:"18 Ay",y:11},{x:"2 Yaş",y:12.2},{x:"2,5 Yaş",y:13.1},{x:"3 Yaş",y:14},{x:"3,5 Yaş",y:15},{x:"4 Yaş",y:16},{x:"4,5 Yaş",y:17.1},{x:"5 Yaş",y:18.2},{x:"5,5 Yaş",y:19.2},{x:"6 Yaş",y:20.2}],
+                  data: [
+                  {x:"Doğum",y:3.2},
+                  {x:"3 Ay",y:5.8},
+                  {x:"6 Ay",y:7.3},
+                  {x:"9 Ay",y:8.2},
+                  {x:"12 Ay",y:8.9},
+                  {x:"15 Ay",y:9.6},
+                  {x:"18 Ay",y:10.2},
+                  {x:"2 Yaş",y:11.5},
+                  {x:"2,5 Yaş",y:12.7},
+                  {x:"3 Yaş",y:13.9},
+                  {x:"3,5 Yaş",y:15.0},
+                  {x:"4 Yaş",y:16.1},
+                  {x:"4,5 Yaş",y:17.2},
+                  {x:"5 Yaş",y:18.2}],    
+
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -509,7 +902,22 @@ function getChartKiloKiz(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.7},{x:"3 Ay",y:6},{x:"6 Ay",y:8},{x:"9 Ay",y:9.5},{x:"12 Ay",y:10.6},{x:"15 Ay",y:11.4},{x:"18 Ay",y:12},{x:"2 Yaş",y:13.1},{x:"2,5 Yaş",y:14.1},{x:"3 Yaş",y:15},{x:"3,5 Yaş",y:16.3},{x:"4 Yaş",y:17.5},{x:"4,5 Yaş",y:18.8},{x:"5 Yaş",y:20},{x:"5,5 Yaş",y:21.1},{x:"6 Yaş",y:22.5}],
+                  data: [
+                  {x:"Doğum",y:3.6},
+                  {x:"3 Ay",y:6.4},
+                  {x:"6 Ay",y:7.9},
+                  {x:"9 Ay",y:8.9},
+                  {x:"12 Ay",y:9.7},
+                  {x:"15 Ay",y:10.4},
+                  {x:"18 Ay",y:11.1},
+                  {x:"2 Yaş",y:12.5},
+                  {x:"2,5 Yaş",y:13.8},
+                  {x:"3 Yaş",y:15.1},
+                  {x:"3,5 Yaş",y:16.4},
+                  {x:"4 Yaş",y:17.7},
+                  {x:"4,5 Yaş",y:18.9},
+                  {x:"5 Yaş",y:20.2}],                      
+                  
                   borderColor: 'green',
                   radius: 0,
                   borderWith: 1,
@@ -519,17 +927,50 @@ function getChartKiloKiz(x,y){
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:3.9},{x:"3 Ay",y:6.4},{x:"6 Ay",y:8.6},{x:"9 Ay",y:10},{x:"12 Ay",y:11},{x:"15 Ay",y:11.9},{x:"18 Ay",y:12.6},{x:"2 Yaş",y:13.8},{x:"2,5 Yaş",y:15},{x:"3 Yaş",y:16.1},{x:"3,5 Yaş",y:17.4},{x:"4 Yaş",y:18.9},{x:"4,5 Yaş",y:20.4},{x:"5 Yaş",y:21.7},{x:"5,5 Yaş",y:23.2},{x:"6 Yaş",y:24.6}],
+                  data: [
+                  {x:"Doğum",y:3.7},
+                  {x:"3 Ay",y:6.7},
+                  {x:"6 Ay",y:8.3},
+                  {x:"9 Ay",y:9.3},
+                  {x:"12 Ay",y:10.2},
+                  {x:"15 Ay",y:10.9},
+                  {x:"18 Ay",y:11.6},
+                  {x:"2 Yaş",y:13.1},
+                  {x:"2,5 Yaş",y:14.5},
+                  {x:"3 Yaş",y:15.9},
+                  {x:"3,5 Yaş",y:17.3},
+                  {x:"4 Yaş",y:18.6},
+                  {x:"4,5 Yaş",y:20.0},
+                  {x:"5 Yaş",y:21.3}],                     
+                  
+                  
                   borderColor: 'orange',
                   radius: 0,
                   borderWith: 1,
                   fill: false,
-                  label: '%90',
+                  label: '%85',
                   borderDash: [3],
                   borderWidth: 1
               },
               {
-                  data: [{x:"Doğum",y:4.3},{x:"3 Ay",y:7},{x:"6 Ay",y:9.2},{x:"9 Ay",y:10.8},{x:"12 Ay",y:12.1},{x:"15 Ay",y:13},{x:"18 Ay",y:13.7},{x:"2 Yaş",y:15.1},{x:"2,5 Yaş",y:16.3},{x:"3 Yaş",y:17.5},{x:"3,5 Yaş",y:19},{x:"4 Yaş",y:20.6},{x:"4,5 Yaş",y:22},{x:"5 Yaş",y:23.8},{x:"5,5 Yaş",y:25.2},{x:"6 Yaş",y:26.6}],
+                  data: [
+                  {x:"Doğum",y:4.2},
+                  {x:"3 Ay",y:7.4},
+                  {x:"6 Ay",y:9.2},
+                  {x:"9 Ay",y:10.4},
+                  {x:"12 Ay",y:11.3},
+                  {x:"15 Ay",y:12.2},
+                  {x:"18 Ay",y:13.0},
+                  {x:"2 Yaş",y:14.6},
+                  {x:"2,5 Yaş",y:16.2},
+                  {x:"3 Yaş",y:17.8},
+                  {x:"3,5 Yaş",y:19.5},
+                  {x:"4 Yaş",y:21.1},
+                  {x:"4,5 Yaş",y:22.8},
+                  {x:"5 Yaş",y:24.4}],                       
+                 
+                 
+                 
                   borderColor: 'red',
                   radius: 0,
                   borderWith: 1,

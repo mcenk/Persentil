@@ -227,7 +227,22 @@ form .user-details .input-box{
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* BASIC */
+.PersentilChartResult {
+  margin-top: 50px;
+  border: 1px solid #9b59b6;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px;
+}
+.PersentilChartResult b{
+padding-left: 35%;
+font-size: 25px;
+font-weight: 500;
+
+}
+
+
+
 
 
 
@@ -250,7 +265,7 @@ form .user-details .input-box{
 
 
 
-/* STRUCTURE */
+
 
 .wrapper {
   background-color: #56baed;
