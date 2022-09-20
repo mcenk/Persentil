@@ -1,12 +1,13 @@
 # Persentil
+
  * Bu web sayfası kullanıcıdan aldığı bebeğe ait boy ve kilo verilerini Dünya Sağlık Örgütü (WHO) verileri ile karşılaştırıp kullanıcıya 
    bebeğin ortalama değerlere göre durumu hakkında bilgiler vermektedir.
  * Bu hesaplama yöntemi percentil hesaplama olarak bilinmektedir. 
  
- * Kullanıcı Giriş Ekranı
+ # Kullanıcı Giriş Ekranı
  <img width="500" alt="image" src="https://user-images.githubusercontent.com/60326186/191365694-4e935386-73ab-4b43-a67f-500ac749e2ba.png">
 
-* Veri Giriş Formu
+# Veri Giriş Formu
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/60326186/191365783-d6cc1590-f6cd-4f63-8a38-161607d02e59.png">
 
 * Kullanıcı Bilgilendirme 
