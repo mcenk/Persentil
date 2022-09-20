@@ -13,4 +13,7 @@
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/60326186/191365872-ad18eec9-1daf-46e2-914f-4a95a630b608.png">
 
 * Sonuçların Grafik Olarak Sunulması
+* Bu aşamada alınan veriler WHO verileri ile karşılaştırılıyor ve bebeğin ortalamadan sapması hesaplanıyor. 
+* Bebeğin ortalaması kırmızı nokta ile grafik üzerinde işaretniyor. 
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/60326186/191365925-38956781-91a5-4ab7-ac8b-2dce09b3ffb0.png">
